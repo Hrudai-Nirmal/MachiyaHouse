@@ -44,27 +44,26 @@ export function HouseJourney() {
 
   return (
     <main className="journey-root">
-      <header className="journey-header">
-        <p className="eyebrow">Machiya Portfolio</p>
-        <h1>{currentRoom.name}</h1>
-        <p>{currentRoom.narrative}</p>
-      </header>
+      <RoomScene
+        room={currentRoom}
+        activeHotspotId={activeHotspotId}
+        onHotspotSelect={handleHotspotSelect}
+      >
+        <header className="room-header-overlay">
+          <p className="eyebrow">Machiya Portfolio</p>
+          <h1>{currentRoom.name}</h1>
+          <p>{currentRoom.narrative}</p>
+        </header>
 
-      <div className="journey-stage">
-        <RoomScene
-          room={currentRoom}
-          activeHotspotId={activeHotspotId}
-          onHotspotSelect={handleHotspotSelect}
-        />
         <InfoPanel room={currentRoom} hotspot={activeHotspot} onClose={() => setActiveHotspotId(null)} />
-      </div>
 
-      <RoomNavigator
-        currentIndex={currentRoomIndex}
-        totalRooms={ROOMS.length}
-        onPrev={() => navigateToRoom(currentRoomIndex - 1)}
-        onNext={() => navigateToRoom(currentRoomIndex + 1)}
-      />
+        <RoomNavigator
+          currentIndex={currentRoomIndex}
+          totalRooms={ROOMS.length}
+          onPrev={() => navigateToRoom(currentRoomIndex - 1)}
+          onNext={() => navigateToRoom(currentRoomIndex + 1)}
+        />
+      </RoomScene>
     </main>
   );
 }

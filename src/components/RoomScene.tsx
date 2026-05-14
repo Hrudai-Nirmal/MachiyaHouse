@@ -2,6 +2,11 @@
 
 import { HotspotButton } from "@/components/HotspotButton";
 import { SceneRendererProps } from "@/types/room";
+import { ReactNode } from "react";
+
+type RoomSceneProps = SceneRendererProps & {
+  children?: ReactNode;
+};
 
 const toneClassMap = {
   dawn: "scene-dawn",
@@ -10,13 +15,13 @@ const toneClassMap = {
   tea: "scene-tea",
 };
 
-export function RoomScene({ room, activeHotspotId, onHotspotSelect }: SceneRendererProps) {
+export function RoomScene({ room, activeHotspotId, onHotspotSelect, children }: RoomSceneProps) {
   const toneClass = toneClassMap[room.scene.tone];
 
   return (
     <section className={`scene-shell ${toneClass}`} aria-label={`${room.name} interactive room`}>
       <div className="scene-svg-wrap" aria-hidden="true">
-        <svg viewBox="0 0 1000 600" className="machiya-scene">
+        <svg viewBox="0 0 1000 600" className="machiya-scene" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="wallGrad" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0%" stopColor="var(--scene-wall-top)" />
@@ -56,6 +61,8 @@ export function RoomScene({ room, activeHotspotId, onHotspotSelect }: SceneRende
           />
         ))}
       </div>
+
+      {children}
     </section>
   );
 }

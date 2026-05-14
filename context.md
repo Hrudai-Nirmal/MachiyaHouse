@@ -84,3 +84,24 @@
 
 #### Updated Durable Rule
 - Use HTTPS remote for this repo unless explicitly changed.
+
+### 2026-05-15 (Fullscreen Room Layout Update)
+#### Goal
+- Make each room fill the entire screen and keep all UI elements inside the room itself.
+
+#### Actions Taken
+- Removed external boxed layout behavior and converted main journey container to full viewport (`100dvh`).
+- Moved room heading/narrative from outside the room into an in-room overlay at the top-left.
+- Moved hotspot detail panel from side layout into an in-room floating panel.
+- Kept room navigation controls (`<` and `>`) inside the room as a bottom-center overlay.
+- Updated `RoomScene` to accept `children` so overlays can be rendered within the room container.
+- Preserved hotspot interactivity, deep-linking (`?room=`), and accessibility focus behavior.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/components/RoomScene.tsx`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx eslint .` successfully.
+- Ran `npx next build` successfully.
