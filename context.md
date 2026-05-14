@@ -130,3 +130,20 @@
 - Local working branch: `main`
 - Remote branches: `main` only
 - Workflow is now fully `main`-only.
+
+### 2026-05-15 (Wall-Only Viewport Composition)
+#### Goal
+- Remove visible floor from the viewport and keep only wall-focused composition with furniture/objects.
+
+#### Actions Taken
+- Updated room SVG composition to remove explicit floor/tatami elements.
+- Expanded shoji wall area and adjusted grid lines for wall-dominant framing.
+- Repositioned and refined furniture/object shapes so they read against wall-only backdrop.
+- Added subtle lower shading to ground objects visually without showing a literal floor plane.
+
+#### Files Modified
+- `src/components/RoomScene.tsx`
+
+#### Validation
+- Ran `npx eslint src/components/RoomScene.tsx` successfully.
+- Ran `npx next build` successfully.

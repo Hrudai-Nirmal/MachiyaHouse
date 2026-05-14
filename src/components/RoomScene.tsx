@@ -27,27 +27,37 @@ export function RoomScene({ room, activeHotspotId, onHotspotSelect, children }: 
               <stop offset="0%" stopColor="var(--scene-wall-top)" />
               <stop offset="100%" stopColor="var(--scene-wall-bottom)" />
             </linearGradient>
+            <linearGradient id="objectShade" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="rgba(0,0,0,0.05)" />
+              <stop offset="100%" stopColor="rgba(0,0,0,0.22)" />
+            </linearGradient>
           </defs>
+
           <rect x="0" y="0" width="1000" height="600" fill="url(#wallGrad)" />
-          <rect x="0" y="390" width="1000" height="210" fill="var(--scene-floor)" />
-          <rect x="64" y="82" width="872" height="254" rx="12" fill="var(--shoji-frame)" />
-          <rect x="86" y="102" width="828" height="214" rx="10" fill="var(--shoji-paper)" />
+
+          <rect x="64" y="88" width="872" height="286" rx="12" fill="var(--shoji-frame)" />
+          <rect x="86" y="108" width="828" height="246" rx="10" fill="var(--shoji-paper)" />
+
           <g opacity="0.35" stroke="var(--ink-soft)" strokeWidth="3">
-            <line x1="292" y1="102" x2="292" y2="316" />
-            <line x1="500" y1="102" x2="500" y2="316" />
-            <line x1="708" y1="102" x2="708" y2="316" />
-            <line x1="86" y1="173" x2="914" y2="173" />
-            <line x1="86" y1="245" x2="914" y2="245" />
+            <line x1="292" y1="108" x2="292" y2="354" />
+            <line x1="500" y1="108" x2="500" y2="354" />
+            <line x1="708" y1="108" x2="708" y2="354" />
+            <line x1="86" y1="190" x2="914" y2="190" />
+            <line x1="86" y1="272" x2="914" y2="272" />
           </g>
-          <rect x="94" y="408" width="812" height="160" rx="10" fill="var(--tatami)" />
-          <g opacity="0.4" stroke="var(--ink-soft)">
-            <line x1="364" y1="408" x2="364" y2="568" />
-            <line x1="636" y1="408" x2="636" y2="568" />
-          </g>
-          <rect x="130" y="324" width="128" height="80" rx="8" fill="var(--wood-dark)" />
-          <rect x="458" y="338" width="88" height="66" rx="6" fill="var(--wood-mid)" />
-          <rect x="750" y="320" width="140" height="84" rx="8" fill="var(--wood-dark)" />
-          <circle cx="502" cy="370" r="14" fill="var(--accent-gold)" opacity="0.8" />
+
+          <rect x="0" y="404" width="1000" height="196" fill="url(#objectShade)" opacity="0.35" />
+
+          <rect x="124" y="322" width="158" height="92" rx="9" fill="var(--wood-dark)" />
+          <rect x="148" y="296" width="110" height="28" rx="6" fill="var(--wood-mid)" />
+
+          <rect x="444" y="334" width="112" height="78" rx="8" fill="var(--wood-mid)" />
+          <rect x="470" y="310" width="62" height="26" rx="5" fill="var(--wood-dark)" />
+
+          <rect x="724" y="314" width="170" height="104" rx="10" fill="var(--wood-dark)" />
+          <rect x="758" y="288" width="100" height="28" rx="6" fill="var(--wood-mid)" />
+
+          <circle cx="502" cy="354" r="18" fill="var(--accent-gold)" opacity="0.82" />
         </svg>
       </div>
 
