@@ -190,3 +190,29 @@
 #### Validation
 - Ran `npx eslint` for updated TypeScript files successfully.
 - Ran `npx next build` successfully.
+
+### 2026-05-15 (Centered Cafe Entrance + Lantern Theme Toggle)
+#### Goal
+- Make intro doors centered and smaller (not full-viewport), keep side elements visible, and improve shoji-paper door style.
+- Add lantern click interaction to toggle light/dark mode.
+- Remove welcome-copy moment and make doors open away without fade-out.
+
+#### Actions Taken
+- Reworked intro composition to a centered facade with:
+  - name board on one side
+  - lantern on the opposite side
+  - intro-only floor perspective for 3D depth
+- Removed welcome/hero copy transition from door opening phase.
+- Changed transition behavior so first room starts showing as doors open.
+- Kept doors visible and opening via sliding motion until they move off frame (no opacity fade on doors).
+- Styled door panels with layered shoji-paper texture and grid framing aesthetic.
+- Implemented lantern button toggle that switches document theme via `data-theme` (`light`/`dark`).
+- Added dark-theme variable overrides while leaving room navigation/interaction behavior intact.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx next build` successfully.
+- Ran `npx eslint` for updated TS file successfully; CSS lint warning is expected under current config.
