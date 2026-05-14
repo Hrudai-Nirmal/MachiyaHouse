@@ -164,3 +164,29 @@
 #### Validation
 - Ran `npx next build` successfully.
 - Ran `npx eslint` on TSX file successfully; global CSS lint warning is expected under current config.
+
+### 2026-05-15 (Cafe Theme Transition + Scroll Entry Animation)
+#### Goal
+- Switch from house framing to cafe theme with animated entrance sequence.
+- Remove interior shoji doors and transition into first room on scroll.
+
+#### Actions Taken
+- Re-themed room content copy and accent labels to cafe language.
+- Added full-screen scroll intro sequence with:
+  - cafe entrance background
+  - paper lantern and cafe name board
+  - entrance door panels that slide open based on scroll progress
+  - zoom-in effect while scrolling
+- Added crossfade/scale reveal into first room view as intro doors open.
+- Rebuilt room interior SVG to cafe wall composition (menu board, shelf objects, counter, stools).
+- Removed internal shoji-door visuals from room scenes.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/components/RoomScene.tsx`
+- `src/data/rooms.ts`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx eslint` for updated TypeScript files successfully.
+- Ran `npx next build` successfully.

@@ -3,12 +3,12 @@ import { Room } from "@/types/room";
 export const ROOMS: Room[] = [
   {
     id: "entrance",
-    name: "Entrance",
+    name: "Cafe Welcome",
     narrative:
-      "Step into a digital Machiya and meet an AI consultant focused on practical outcomes, not hype.",
+      "Inside the cafe, discover how AI consulting engagements move from calm discovery to measurable delivery.",
     scene: {
       tone: "dawn",
-      accentLabel: "Genkan",
+      accentLabel: "Front Counter",
     },
     hotspots: [
       {
@@ -35,10 +35,10 @@ export const ROOMS: Room[] = [
     id: "services",
     name: "Services",
     narrative:
-      "Inside the atelier room, every service is designed to move from concept to production with clear milestones.",
+      "At the brew bar, each service is designed to move from concept to production with clear checkpoints.",
     scene: {
       tone: "paper",
-      accentLabel: "Atelier",
+      accentLabel: "Brew Bar",
     },
     hotspots: [
       {
@@ -74,10 +74,10 @@ export const ROOMS: Room[] = [
     id: "projects",
     name: "Projects",
     narrative:
-      "The project room highlights tangible outcomes from focused AI engagements.",
+      "The showcase wall highlights tangible outcomes from focused AI engagements.",
     scene: {
       tone: "garden",
-      accentLabel: "Tokonoma",
+      accentLabel: "Showcase Wall",
     },
     hotspots: [
       {
@@ -113,10 +113,10 @@ export const ROOMS: Room[] = [
     id: "contact",
     name: "Contact",
     narrative:
-      "In the tea room, choose the channel that matches your project pace and preferred collaboration style.",
+      "In the lounge corner, choose the channel that matches your project pace and preferred collaboration style.",
     scene: {
       tone: "tea",
-      accentLabel: "Tea Room",
+      accentLabel: "Lounge",
     },
     hotspots: [
       {
