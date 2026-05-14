@@ -60,3 +60,27 @@
 #### Pending Follow-ups
 - Replace placeholder contact links in `src/data/rooms.ts` with real consultant endpoints.
 - Optionally add directional room transition animations and bilingual EN/JA copy structure.
+
+### 2026-05-15 (Repo Configuration Update)
+#### Additional Actions
+- Configured git remote `origin` to `git@github.com:Hrudai-Nirmal/MachiyaHouse.git`.
+- Committed all current workspace changes:
+  - Commit: `5fc3091`
+  - Message: `Build Machiya portfolio v1 and add persistent context log`
+- Attempted push with `git push -u origin master`.
+
+#### Push Status
+- Push failed due to SSH authentication error:
+  - `git@github.com: Permission denied (publickey).`
+
+#### Unblock Needed
+- Configure a valid SSH key for GitHub on this machine, or switch remote to HTTPS with a valid GitHub token.
+
+### 2026-05-15 (Remote Protocol Change)
+#### Additional Actions
+- Updated `origin` remote from SSH to HTTPS:
+  - `https://github.com/Hrudai-Nirmal/MachiyaHouse.git`
+- Successfully pushed `master` to remote and set upstream tracking.
+
+#### Updated Durable Rule
+- Use HTTPS remote for this repo unless explicitly changed.
