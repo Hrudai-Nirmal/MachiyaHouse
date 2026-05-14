@@ -1,0 +1,62 @@
+# Context Log
+
+## Instructions (Read First Every Session)
+- Always update this file (`context.md`) during each working session.
+- Keep entries chronological and append-only; do not rewrite past logs unless fixing factual errors.
+- For each session, include: date/time, goals, actions taken, files changed, validation run, git actions, and pending next steps.
+- Use concise bullet points and clear section headers.
+- When a user gives durable workflow rules (for example, push target repo), record them here immediately.
+- Before ending a session, add a final summary and explicit handoff notes for the next session.
+
+## Durable Project Rules
+- Push all changes to: `git@github.com:Hrudai-Nirmal/MachiyaHouse.git`.
+
+## Session Log
+
+### 2026-05-15 (Current Session)
+#### Goal
+- Build and implement Machiya portfolio v1 (Next.js + TypeScript) with 4-room linear navigation and SVG hotspot interactions.
+
+#### Actions Taken
+- Scaffolded Next.js App Router project in temporary lowercase path due npm uppercase-folder naming restriction, then moved project into `d:\MachiyaHouse`.
+- Replaced starter template with custom Machiya portfolio architecture.
+- Implemented typed domain model for rooms/hotspots/navigation/scene renderer.
+- Added static room content for `Entrance`, `Services`, `Projects`, and `Contact`.
+- Implemented client-side journey state with deep-link support via query param `?room=`.
+- Added persistent `<` and `>` room navigation with boundary-disabled behavior.
+- Added interactive SVG placeholder room scenes and hotspot components with keyboard-accessible button controls.
+- Added room-local info panel with close behavior and CTA link support.
+- Applied full global styling system with warm Machiya palette, atmosphere gradients, responsive layout, and subtle motion.
+- Added reduced-motion accessibility fallback.
+- Updated metadata and font strategy in root layout.
+- Removed unused starter stylesheet.
+
+#### Files Added
+- `src/types/room.ts`
+- `src/data/rooms.ts`
+- `src/components/HouseJourney.tsx`
+- `src/components/HotspotButton.tsx`
+- `src/components/InfoPanel.tsx`
+- `src/components/RoomNavigator.tsx`
+- `src/components/RoomScene.tsx`
+- `context.md`
+
+#### Files Modified
+- `src/app/page.tsx`
+- `src/app/layout.tsx`
+- `src/app/globals.css`
+
+#### Files Removed
+- `src/app/page.module.css`
+
+#### Validation
+- Ran `npx eslint .` successfully.
+- Ran `npx next build` successfully (static generation completed).
+
+#### Git / Publishing Notes
+- User provided canonical remote repo: `git@github.com:Hrudai-Nirmal/MachiyaHouse.git`.
+- Next action: set git remote, commit current work, and push.
+
+#### Pending Follow-ups
+- Replace placeholder contact links in `src/data/rooms.ts` with real consultant endpoints.
+- Optionally add directional room transition animations and bilingual EN/JA copy structure.
