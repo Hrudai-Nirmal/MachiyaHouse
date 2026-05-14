@@ -147,3 +147,20 @@
 #### Validation
 - Ran `npx eslint src/components/RoomScene.tsx` successfully.
 - Ran `npx next build` successfully.
+
+### 2026-05-15 (Minimal Wall Scene + Unified Wall Color)
+#### Goal
+- Make room visuals more minimal and closer to reference style while keeping all walls the same color.
+
+#### Actions Taken
+- Simplified scene linework (fewer shoji grid lines) for a cleaner composition.
+- Increased object scale and presence to create larger focal elements.
+- Unified wall color variables across all room tone classes so every room uses identical wall gradient values.
+
+#### Files Modified
+- `src/components/RoomScene.tsx`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx next build` successfully.
+- Ran `npx eslint` on TSX file successfully; global CSS lint warning is expected under current config.

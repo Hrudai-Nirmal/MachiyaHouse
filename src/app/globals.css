@@ -246,27 +246,23 @@ a {
 }
 
 .scene-dawn {
-  --scene-wall-top: #f0d8bb;
-  --scene-wall-bottom: #cfb194;
-  --scene-floor: #87614f;
+  --scene-wall-top: #eadcc8;
+  --scene-wall-bottom: #d8c3aa;
 }
 
 .scene-paper {
-  --scene-wall-top: #ece0ce;
-  --scene-wall-bottom: #d5c2ad;
-  --scene-floor: #7c5e4f;
+  --scene-wall-top: #eadcc8;
+  --scene-wall-bottom: #d8c3aa;
 }
 
 .scene-garden {
-  --scene-wall-top: #dde5d5;
-  --scene-wall-bottom: #b8c5af;
-  --scene-floor: #6d5c4a;
+  --scene-wall-top: #eadcc8;
+  --scene-wall-bottom: #d8c3aa;
 }
 
 .scene-tea {
-  --scene-wall-top: #e7ddcf;
-  --scene-wall-bottom: #ccbaa7;
-  --scene-floor: #775844;
+  --scene-wall-top: #eadcc8;
+  --scene-wall-bottom: #d8c3aa;
 }
 
 @keyframes pulse {
