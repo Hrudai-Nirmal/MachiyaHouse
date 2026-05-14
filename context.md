@@ -105,3 +105,17 @@
 #### Validation
 - Ran `npx eslint .` successfully.
 - Ran `npx next build` successfully.
+
+### 2026-05-15 (Branch Migration to main)
+#### Actions Taken
+- Renamed local branch from `master` to `main`.
+- Pushed `main` and set upstream tracking to `origin/main`.
+
+#### Important Result
+- Attempted to delete remote `master`, but GitHub rejected deletion because `master` is currently the default branch on the remote.
+
+#### Required External Step
+- Change default branch in GitHub repository settings to `main`, then remote `master` can be deleted.
+
+#### Durable Rule Update
+- Use `main` for all future work and pushes.
