@@ -119,3 +119,14 @@
 
 #### Durable Rule Update
 - Use `main` for all future work and pushes.
+
+### 2026-05-15 (Branch Cleanup Finalized)
+#### Actions Taken
+- Verified remote `master` no longer exists.
+- Found and removed accidental remote branch named `origin`.
+- Pruned remote-tracking refs locally.
+
+#### Current Branch State
+- Local working branch: `main`
+- Remote branches: `main` only
+- Workflow is now fully `main`-only.
