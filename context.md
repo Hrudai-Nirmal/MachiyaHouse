@@ -280,3 +280,19 @@
 #### Validation
 - Ran `npx next build` successfully.
 - ESLint reports only expected `next/no-img-element` warnings for direct SVG `<img>` usage.
+
+### 2026-05-15 (Door SVG Fit Adjustment)
+#### Goal
+- Make shoji SVG doors fit the intro door frame edge-to-edge without visible inset gaps.
+
+#### Actions Taken
+- Updated door SVG rendering CSS to anchor images absolutely to panel bounds.
+- Added `object-fit: fill` and slight scale-up to eliminate thin edge seams.
+- Set door panel container to `position: relative` for correct inset anchoring.
+
+#### Files Modified
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx next build` successfully.
+- ESLint warnings unchanged (`no-img-element` and CSS file lint-ignore warning).
