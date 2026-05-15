@@ -216,3 +216,24 @@
 #### Validation
 - Ran `npx next build` successfully.
 - Ran `npx eslint` for updated TS file successfully; CSS lint warning is expected under current config.
+
+### 2026-05-15 (Door Position + SVG Door Asset Integration)
+#### Goal
+- Place intro doors at the floor edge, increase zoom toward doors, and make combined doors cover ~50% viewport width.
+- Use user-provided shoji door SVG from `public` for both panels.
+
+#### Actions Taken
+- Integrated door art from `public/shoji svg.svg` into left/right sliding door panels.
+- Mirrored right door panel to match expected paired-door behavior.
+- Increased entrance zoom progression during scroll.
+- Repositioned centered door facade to sit at floor edge.
+- Set door facade width to target ~50% viewport coverage on desktop.
+- Kept name board and lantern on opposite sides of the centered doors.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx next build` successfully.
+- Ran ESLint on updated component; only `next/no-img-element` warnings due to direct SVG `<img>` usage.

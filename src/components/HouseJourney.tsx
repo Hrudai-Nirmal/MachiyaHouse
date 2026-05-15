@@ -77,7 +77,7 @@ export function HouseJourney() {
     setActiveHotspotId((prev) => (prev === hotspotId ? null : hotspotId));
   };
 
-  const introScale = 0.92 + scrollProgress * 0.12;
+  const introScale = 0.98 + scrollProgress * 0.22;
   const roomFade = clamp((scrollProgress - 0.08) / 0.18, 0, 1);
   const doorSlide = 112 * scrollProgress;
 
@@ -127,8 +127,12 @@ export function HouseJourney() {
               </button>
               <div className="door-frame">
                 <div className="door-rail" />
-                <div className="door-panel left" style={{ transform: `translateX(${-doorSlide}%)` }} />
-                <div className="door-panel right" style={{ transform: `translateX(${doorSlide}%)` }} />
+                <div className="door-panel left" style={{ transform: `translateX(${-doorSlide}%)` }}>
+                  <img src="/shoji%20svg.svg" alt="" className="door-svg" />
+                </div>
+                <div className="door-panel right" style={{ transform: `translateX(${doorSlide}%)` }}>
+                  <img src="/shoji%20svg.svg" alt="" className="door-svg mirrored" />
+                </div>
               </div>
             </div>
           </div>

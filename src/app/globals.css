@@ -80,7 +80,7 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 30dvh;
+  height: 32dvh;
   background: linear-gradient(180deg, rgba(97, 66, 45, 0.18), rgba(66, 44, 30, 0.7));
   transform: perspective(950px) rotateX(56deg) translateY(34%);
   transform-origin: bottom;
@@ -89,9 +89,9 @@ a {
 .entrance-facade {
   position: absolute;
   left: 50%;
-  top: 54%;
-  width: min(52vw, 640px);
-  aspect-ratio: 1.08;
+  bottom: 31dvh;
+  width: min(50vw, 760px);
+  aspect-ratio: 1;
   transform-origin: center;
 }
 
@@ -160,24 +160,9 @@ a {
   top: 0;
   bottom: 0;
   width: 50%;
-  background:
-    linear-gradient(180deg, rgba(255, 248, 232, 0.86), rgba(235, 219, 195, 0.84)),
-    repeating-linear-gradient(
-      90deg,
-      rgba(105, 73, 48, 0.2) 0,
-      rgba(105, 73, 48, 0.2) 2px,
-      rgba(255, 255, 255, 0) 2px,
-      rgba(255, 255, 255, 0) 68px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(105, 73, 48, 0.18) 0,
-      rgba(105, 73, 48, 0.18) 2px,
-      rgba(255, 255, 255, 0) 2px,
-      rgba(255, 255, 255, 0) 66px
-    );
-  border-inline: 3px solid rgba(78, 54, 37, 0.6);
+  border-inline: 2px solid rgba(78, 54, 37, 0.65);
   transition: transform 120ms linear;
+  overflow: hidden;
 }
 
 .door-panel.left {
@@ -186,6 +171,16 @@ a {
 
 .door-panel.right {
   right: 0;
+}
+
+.door-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.door-svg.mirrored {
+  transform: scaleX(-1);
 }
 
 .room-reveal {
@@ -417,17 +412,18 @@ a {
 
 @media (max-width: 900px) {
   .entrance-facade {
-    width: min(70vw, 520px);
+    width: min(66vw, 520px);
+    bottom: 29dvh;
   }
 
   .name-board {
-    left: -12%;
-    top: -12%;
+    left: -18%;
+    top: -8%;
   }
 
   .paper-lantern {
-    right: -10%;
-    top: -15%;
+    right: -16%;
+    top: -11%;
   }
 }
 
@@ -445,8 +441,8 @@ a {
 
 @media (max-width: 640px) {
   .entrance-facade {
-    width: min(84vw, 460px);
-    top: 58%;
+    width: min(72vw, 460px);
+    bottom: 30dvh;
   }
 
   .room-header-overlay p {
