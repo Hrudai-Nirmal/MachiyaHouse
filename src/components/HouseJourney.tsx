@@ -73,9 +73,7 @@ export function HouseJourney() {
   };
 
   const introScale = 1 + scrollProgress * 0.22;
-  const introFade = clamp(1 - scrollProgress * 1.45, 0, 1);
-  const roomFade = clamp((scrollProgress - 0.34) / 0.26, 0, 1);
-  const roomScale = 1.06 - roomFade * 0.06;
+  const doorSlide = 120 * scrollProgress;
 
   return (
     <main className="journey-root">
@@ -85,35 +83,27 @@ export function HouseJourney() {
             className="cafe-entrance"
             style={{
               transform: `scale(${introScale})`,
-              opacity: introFade,
             }}
-            aria-hidden={roomFade > 0.95}
+            aria-hidden={scrollProgress > 0.98}
           >
             <div className="entrance-glow" />
-            <div className="name-board">MACHIYA CAFE</div>
             <div className="door-frame">
               <div
                 className="door-panel left"
-                style={{ transform: `translateX(${-52 * scrollProgress}%)` }}
+                style={{ transform: `translateX(${-doorSlide}%)` }}
               >
                 <img src="/shoji-door.svg" alt="" className="door-svg" />
               </div>
               <div
                 className="door-panel right"
-                style={{ transform: `translateX(${52 * scrollProgress}%)` }}
+                style={{ transform: `translateX(${doorSlide}%)` }}
               >
                 <img src="/shoji-door.svg" alt="" className="door-svg mirrored" />
               </div>
             </div>
           </div>
 
-          <div
-            className="room-reveal"
-            style={{
-              opacity: roomFade,
-              transform: `scale(${roomScale})`,
-            }}
-          >
+          <div className="room-reveal">
             <RoomScene
               room={currentRoom}
               activeHotspotId={activeHotspotId}

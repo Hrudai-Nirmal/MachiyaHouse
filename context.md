@@ -296,3 +296,22 @@
 #### Validation
 - Ran `npx next build` successfully.
 - ESLint warnings unchanged (`no-img-element` and CSS file lint-ignore warning).
+
+### 2026-05-15 (Direct Room-Behind-Doors Reveal + Full Slide-Out)
+#### Goal
+- Ensure doors fit width better and slide fully out while showing first room directly behind (no heading-in-gap and no fade transition).
+
+#### Actions Taken
+- Removed entrance heading (`MACHIYA CAFE`) from intro layer to prevent text showing through door gap.
+- Removed room fade/scale transition so first room is visible behind doors immediately.
+- Removed intro layer opacity fade so doors do not fade out.
+- Increased door slide travel to 120% so panels move fully out of frame.
+- Increased door SVG horizontal scale so width fills panel more aggressively.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx next build` successfully.
+- ESLint shows only expected `next/no-img-element` warnings.

@@ -56,7 +56,7 @@ a {
 .room-reveal {
   position: absolute;
   inset: 0;
-  transition: transform 120ms linear, opacity 120ms linear;
+  transition: transform 120ms linear;
 }
 
 .cafe-entrance {
@@ -74,25 +74,12 @@ a {
   background: radial-gradient(circle, rgba(255, 206, 143, 0.48), rgba(255, 206, 143, 0));
 }
 
-.name-board {
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0.7rem 1.6rem;
-  border-radius: 0.5rem;
-  background: #3f291d;
-  color: #f3dec2;
-  font-family: var(--font-display), Georgia, serif;
-  letter-spacing: 0.08em;
-  font-size: clamp(1rem, 2vw, 1.55rem);
-}
-
 .door-frame {
   position: absolute;
   inset: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 3;
 }
 
 .door-panel {
@@ -110,15 +97,15 @@ a {
   display: block;
   object-fit: fill;
   object-position: center;
-  transform: scale(1.01);
+  transform: scaleX(1.08) scaleY(1.01);
 }
 
 .door-svg.mirrored {
-  transform: scaleX(-1) scale(1.01);
+  transform: scaleX(-1.08) scaleY(1.01);
 }
 
 .room-reveal {
-  z-index: 2;
+  z-index: 1;
 }
 
 .scene-shell {
