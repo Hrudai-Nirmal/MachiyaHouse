@@ -28,7 +28,6 @@ export function HouseJourney() {
 
   const [activeHotspotId, setActiveHotspotId] = useState<string | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
 
   const currentRoom = ROOMS[currentRoomIndex];
 
@@ -41,7 +40,7 @@ export function HouseJourney() {
       }
 
       const rect = node.getBoundingClientRect();
-      const travel = window.innerHeight * 1.2;
+      const travel = window.innerHeight * 1.25;
       const progress = clamp(-rect.top / travel, 0, 1);
       setScrollProgress(progress);
     };
@@ -55,10 +54,6 @@ export function HouseJourney() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = darkMode ? "dark" : "light";
-  }, [darkMode]);
 
   const activeHotspot = useMemo(() => {
     return currentRoom.hotspots.find((hotspot) => hotspot.id === activeHotspotId) ?? null;
@@ -77,18 +72,52 @@ export function HouseJourney() {
     setActiveHotspotId((prev) => (prev === hotspotId ? null : hotspotId));
   };
 
-  const introScale = 0.98 + scrollProgress * 0.22;
-  const roomFade = clamp((scrollProgress - 0.08) / 0.18, 0, 1);
-  const doorSlide = 112 * scrollProgress;
+  const introScale = 1 + scrollProgress * 0.22;
+  const introFade = clamp(1 - scrollProgress * 1.45, 0, 1);
+  const roomFade = clamp((scrollProgress - 0.34) / 0.26, 0, 1);
+  const roomScale = 1.06 - roomFade * 0.06;
 
   return (
     <main className="journey-root">
       <section className="intro-sequence" ref={introRef}>
         <div className="intro-sticky">
           <div
+            className="cafe-entrance"
+            style={{
+              transform: `scale(${introScale})`,
+              opacity: introFade,
+            }}
+            aria-hidden={roomFade > 0.95}
+          >
+            <div className="entrance-glow" />
+            <div className="name-board">MACHIYA CAFE</div>
+            <div className="paper-lantern">AI</div>
+            <div className="entrance-copy">
+              <p className="eyebrow">AI Consultant Portfolio</p>
+              <h1>Welcome To The Cafe</h1>
+              <p>Scroll down to step inside.</p>
+            </div>
+            <div className="door-frame">
+              <div
+                className="door-panel left"
+                style={{ transform: `translateX(${-52 * scrollProgress}%)` }}
+              >
+                <img src="/shoji%20svg.svg" alt="" className="door-svg" />
+              </div>
+              <div
+                className="door-panel right"
+                style={{ transform: `translateX(${52 * scrollProgress}%)` }}
+              >
+                <img src="/shoji%20svg.svg" alt="" className="door-svg mirrored" />
+              </div>
+            </div>
+          </div>
+
+          <div
             className="room-reveal"
             style={{
               opacity: roomFade,
+              transform: `scale(${roomScale})`,
             }}
           >
             <RoomScene
@@ -111,30 +140,6 @@ export function HouseJourney() {
                 onNext={() => navigateToRoom(currentRoomIndex + 1)}
               />
             </RoomScene>
-          </div>
-
-          <div className="cafe-entrance" aria-hidden={roomFade > 0.98}>
-            <div className="entrance-floor" />
-            <div className="entrance-facade" style={{ transform: `translateX(-50%) scale(${introScale})` }}>
-              <div className="name-board">MACHIYA CAFE</div>
-              <button
-                type="button"
-                className="paper-lantern"
-                onClick={() => setDarkMode((prev) => !prev)}
-                aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
-              >
-                AI
-              </button>
-              <div className="door-frame">
-                <div className="door-rail" />
-                <div className="door-panel left" style={{ transform: `translateX(${-doorSlide}%)` }}>
-                  <img src="/shoji%20svg.svg" alt="" className="door-svg" />
-                </div>
-                <div className="door-panel right" style={{ transform: `translateX(${doorSlide}%)` }}>
-                  <img src="/shoji%20svg.svg" alt="" className="door-svg mirrored" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

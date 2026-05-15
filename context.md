@@ -237,3 +237,23 @@
 #### Validation
 - Ran `npx next build` successfully.
 - Ran ESLint on updated component; only `next/no-img-element` warnings due to direct SVG `<img>` usage.
+
+### 2026-05-15 (Revert Intro Behavior to Full-Screen Door Version + SVG Doors)
+#### Goal
+- Restore the full-screen door intro behavior from earlier cafe version and use provided shoji SVG door asset.
+
+#### Actions Taken
+- Reverted intro interaction/layout behavior to match commit `f313446` experience:
+  - full-screen door presentation
+  - zoom + fade reveal into cafe room
+  - original intro copy restored
+- Replaced flat CSS door panels with user-provided SVG from `public/shoji svg.svg`.
+- Mirrored right door SVG so left/right panels open symmetrically.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/app/globals.css`
+
+#### Validation
+- Ran `npx next build` successfully.
+- Ran ESLint on updated component; only `next/no-img-element` warnings from direct SVG `<img>` usage.
