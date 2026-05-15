@@ -91,24 +91,18 @@ export function HouseJourney() {
           >
             <div className="entrance-glow" />
             <div className="name-board">MACHIYA CAFE</div>
-            <div className="paper-lantern">AI</div>
-            <div className="entrance-copy">
-              <p className="eyebrow">AI Consultant Portfolio</p>
-              <h1>Welcome To The Cafe</h1>
-              <p>Scroll down to step inside.</p>
-            </div>
             <div className="door-frame">
               <div
                 className="door-panel left"
                 style={{ transform: `translateX(${-52 * scrollProgress}%)` }}
               >
-                <img src="/shoji%20svg.svg" alt="" className="door-svg" />
+                <img src="/shoji-door.svg" alt="" className="door-svg" />
               </div>
               <div
                 className="door-panel right"
                 style={{ transform: `translateX(${52 * scrollProgress}%)` }}
               >
-                <img src="/shoji%20svg.svg" alt="" className="door-svg mirrored" />
+                <img src="/shoji-door.svg" alt="" className="door-svg mirrored" />
               </div>
             </div>
           </div>

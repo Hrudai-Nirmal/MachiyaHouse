@@ -257,3 +257,26 @@
 #### Validation
 - Ran `npx next build` successfully.
 - Ran ESLint on updated component; only `next/no-img-element` warnings from direct SVG `<img>` usage.
+
+### 2026-05-15 (Remove Welcome/Lantern + Fix Door SVG Rendering)
+#### Goal
+- Remove welcome frame and lantern from intro.
+- Fix issue where only door borders were visible and SVG door art was not rendering.
+
+#### Actions Taken
+- Removed entrance welcome text block from intro scene.
+- Removed lantern element and related styling.
+- Copied user-provided SVG to a stable filename without spaces:
+  - `public/shoji-door.svg`
+- Updated both sliding door panels to use `/shoji-door.svg`.
+- Kept right door mirrored for symmetrical opening.
+- Added panel background fallback so doors still appear if image loading fails.
+
+#### Files Modified
+- `src/components/HouseJourney.tsx`
+- `src/app/globals.css`
+- `public/shoji-door.svg` (new)
+
+#### Validation
+- Ran `npx next build` successfully.
+- ESLint reports only expected `next/no-img-element` warnings for direct SVG `<img>` usage.

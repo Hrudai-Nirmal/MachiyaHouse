@@ -1,0 +1,28 @@
+<svg width="200" height="400" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Wooden Frame (Deep Charcoal) -->
+  <rect width="200" height="400" fill="#1A1A1A"/>
+  
+  <!-- Washi Paper Inset (Subtle Cream) -->
+  <rect x="8" y="8" width="184" height="384" fill="#F9F7F2"/>
+  
+  <!-- Inner "Paper Depth" Shadow (Subtle Paper Art effect) -->
+  <rect x="8" y="8" width="184" height="384" stroke="#E5E0D5" stroke-width="4" stroke-alignment="inner"/>
+
+  <!-- Horizontal Grid (Kumiko) -->
+  <g stroke="#1A1A1A" stroke-width="3">
+    <line x1="8" y1="64" x2="192" y2="64" />
+    <line x1="8" y1="132" x2="192" y2="132" />
+    <line x1="8" y1="200" x2="192" y2="200" />
+    <line x1="8" y1="268" x2="192" y2="268" />
+    <line x1="8" y1="336" x2="192" y2="336" />
+  </g>
+
+  <!-- Vertical Grid (Kumiko) -->
+  <g stroke="#1A1A1A" stroke-width="3">
+    <line x1="69" y1="8" x2="69" y2="392" />
+    <line x1="131" y1="8" x2="131" y2="392" />
+  </g>
+  
+  <!-- Subtle Door Handle (Centered for symmetry) -->
+  <rect x="90" y="190" width="20" height="20" fill="#1A1A1A" rx="2"/>
+</svg>
